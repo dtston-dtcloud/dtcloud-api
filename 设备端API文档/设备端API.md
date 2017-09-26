@@ -11,8 +11,9 @@
 	
 ## 接口列表	
 
-	- [1. 设备激活](#device_activation)
-	- [2. 设备认证](#device_verify)
+[1. 设备激活](#device_activation)
+
+[2. 设备认证](#device_verify)
 
 ## 接口详情
 ### <a name="device_activation">1. 设备激活</a>
