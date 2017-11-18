@@ -10,7 +10,7 @@
 [1. 设备激活](#device_activation)
 
 [2. 设备认证](#device_verify)
-
+<style>table th {width: 200px;}</style>
 | 水果| 价格|数量|
 |--|:--:|:--:|
 | 香蕉|$1|5|
