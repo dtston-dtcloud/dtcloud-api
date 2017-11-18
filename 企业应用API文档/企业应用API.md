@@ -1,280 +1,166 @@
-# 简介
-	深智云平台为企业应用提供用户管理、设备管理、数据统计等操作的接口，通讯方式采用HTTP，数据格式采用JSON。
+[1. 运营平台-用户管理-活跃用户-概览](#api_1)
 
-### 接口列表
+[2. 运营平台-用户管理-活跃用户-数据趋势](#api_2)
 
-[1. 发送验证码](#api_1)
+[3. 运营平台-告警管理-导出](#api_3)
 
-[2. 登录](#api_2)
+[4. 运营平台-告警管理-获取告警明细](#api_4)
 
-[3. 登出](#api_3)
+[5. 运营平台-告警管理-概览](#api_5)
 
-[4. 注册](#api_4)
+[6. 运营平台-告警管理-数据趋势](#api_6)
 
-[5. 重置密码（忘记密码）](#api_5)
+[7. 开发平台-产品开发-告警设置-删除告警规则](#api_7)
 
-[6. 运营平台-用户管理-活跃用户-概览](#api_6)
+[8. 开发平台-产品开发-告警设置-获取告警](#api_8)
 
-[7. 运营平台-用户管理-活跃用户-数据趋势](#api_7)
+[9. 开发平台-产品开发-告警设置-添加告警规则](#api_9)
 
-[8. 运营平台-告警管理-导出](#api_8)
+[10. 开发平台-产品开发-告警设置-编辑告警规则](#api_10)
 
-[9. 运营平台-告警管理-获取告警明细](#api_9)
+[11. 运营平台-APK升级-删除APK](#api_11)
 
-[10. 运营平台-告警管理-概览](#api_10)
+[12. 运营平台-APK升级-获取APK](#api_12)
 
-[11. 运营平台-告警管理-数据趋势](#api_11)
+[13. 运营平台-APK升级-创建APK](#api_13)
 
-[12. 开发平台-产品开发-告警设置-删除告警规则](#api_12)
+[14. 获取所有应用](#api_14)
 
-[13. 开发平台-产品开发-告警设置-获取告警](#api_13)
+[15. 开发平台-产品开发-应用管理-删除应用](#api_15)
 
-[14. 开发平台-产品开发-告警设置-添加告警规则](#api_14)
+[16. 开发平台-产品开发-应用管理-获取应用](#api_16)
 
-[15. 开发平台-产品开发-告警设置-编辑告警规则](#api_15)
+[17. 开发平台-产品开发-应用管理-创建应用](#api_17)
 
-[16. 运营平台-APK升级-删除APK](#api_16)
+[18. 开发平台-产品开发-应用管理-编辑应用](#api_18)
 
-[17. 运营平台-APK升级-获取APK](#api_17)
+[19. 开发平台-产品开发-设备调试-删除设备](#api_19)
 
-[18. 运营平台-APK升级-创建APK](#api_18)
+[20. 开发平台-产品开发-设备调试-获取设备](#api_20)
 
-[19. 获取所有应用](#api_19)
+[21. 开发平台-产品开发-设备调试-添加设备](#api_21)
 
-[20. 开发平台-产品开发-应用管理-删除应用](#api_20)
+[22. 开发平台-产品开发-设备调试-发送指令给设备](#api_22)
 
-[21. 开发平台-产品开发-应用管理-获取应用](#api_21)
+[23. 运营平台-设备管理-设备授权-获取授权明细](#api_23)
 
-[22. 开发平台-产品开发-应用管理-创建应用](#api_22)
+[24. 运营平台-设备管理-设备授权-概览](#api_24)
 
-[23. 开发平台-产品开发-应用管理-编辑应用](#api_23)
+[25. 运营平台-设备管理-设备情况-导出](#api_25)
 
-[24. 开发平台-产品开发-设备调试-删除设备](#api_24)
+[26. 运营平台-设备管理-设备授权-导入](#api_26)
 
-[25. 开发平台-产品开发-设备调试-获取设备](#api_25)
+[27. 运营平台-设备管理-设备情况-获取设备明细](#api_27)
 
-[26. 开发平台-产品开发-设备调试-添加设备](#api_26)
+[28. 运营平台-设备管理-设备情况-概览](#api_28)
 
-[27. 开发平台-产品开发-设备调试-发送指令给设备](#api_27)
+[29. 运营平台-设备管理-设备情况-数据趋势](#api_29)
 
-[28. 运营平台-设备管理-设备授权-获取授权明细](#api_28)
+[30. 运营平台-首页-设备分布](#api_30)
 
-[29. 运营平台-设备管理-设备授权-概览](#api_29)
+[31. 运营平台-首页-设备趋势](#api_31)
 
-[30. 运营平台-设备管理-设备情况-导出](#api_30)
+[32. 获取企业信息](#api_32)
 
-[31. 运营平台-设备管理-设备授权-导入](#api_31)
+[33. 运营平台-首页-概览](#api_33)
 
-[32. 运营平台-设备管理-设备情况-获取设备明细](#api_32)
+[34. 编辑企业信息](#api_34)
 
-[33. 运营平台-设备管理-设备情况-概览](#api_33)
+[35. 运营平台-首页-用户分布](#api_35)
 
-[34. 运营平台-设备管理-设备情况-数据趋势](#api_34)
+[36. 运营平台-首页-用户机型分布](#api_36)
 
-[35. 运营平台-首页-设备分布](#api_35)
+[37. 运营平台-首页-用户趋势](#api_37)
 
-[36. 运营平台-首页-设备趋势](#api_36)
+[38. 运营平台-常见问题管理-删除常见问题](#api_38)
 
-[37. 获取企业信息](#api_37)
+[39. 运营平台-常见问题管理-获取常见问题](#api_39)
 
-[38. 运营平台-首页-概览](#api_38)
+[40. 运营平台-常见问题管理-新增常见问题](#api_40)
 
-[39. 编辑企业信息](#api_39)
+[41. 运营平台-常见问题管理-编辑常见问题](#api_41)
 
-[40. 运营平台-首页-用户分布](#api_40)
+[42. 运营平台-用户反馈-删除](#api_42)
 
-[41. 运营平台-首页-用户机型分布](#api_41)
+[43. 运营平台-用户反馈-获取反馈列表](#api_43)
 
-[42. 运营平台-首页-用户趋势](#api_42)
+[44. 运营平台-用户反馈-修改状态](#api_44)
 
-[43. 运营平台-常见问题管理-删除常见问题](#api_43)
+[45. 运营平台-固件升级-删除固件](#api_45)
 
-[44. 运营平台-常见问题管理-获取常见问题](#api_44)
+[46. 运营平台-固件升级-获取固件](#api_46)
 
-[45. 运营平台-常见问题管理-新增常见问题](#api_45)
+[47. 运营平台-固件升级-创建固件](#api_47)
 
-[46. 运营平台-常见问题管理-编辑常见问题](#api_46)
+[48. 运营平台-邮件模板-获取模板](#api_48)
 
-[47. 运营平台-用户反馈-删除](#api_47)
+[49. 运营平台-邮件模板-保存模板](#api_49)
 
-[48. 运营平台-用户反馈-获取反馈列表](#api_48)
+[50. 获取个人信息](#api_50)
 
-[49. 运营平台-用户反馈-修改状态](#api_49)
+[51. 编辑个人信息](#api_51)
 
-[50. 运营平台-固件升级-删除固件](#api_50)
+[52. 运营平台-消息推送-新增消息](#api_52)
 
-[51. 运营平台-固件升级-获取固件](#api_51)
+[53. 运营平台-消息推送-获取配置](#api_53)
 
-[52. 运营平台-固件升级-创建固件](#api_52)
+[54. 运营平台-消息推送-获取消息](#api_54)
 
-[53. 运营平台-邮件模板-获取模板](#api_53)
+[55. 运营平台-消息推送-保存配置](#api_55)
 
-[54. 运营平台-邮件模板-保存模板](#api_54)
+[56. 获取所有产品](#api_56)
 
-[55. 获取个人信息](#api_55)
+[57. 开发平台-产品开发-产品管理-删除产品](#api_57)
 
-[56. 编辑个人信息](#api_56)
+[58. 开发平台-产品开发-产品管理-获取产品](#api_58)
 
-[57. 运营平台-消息推送-新增消息](#api_57)
+[59. 开发平台-产品开发-产品管理-创建产品](#api_59)
 
-[58. 运营平台-消息推送-获取配置](#api_58)
+[60. 开发平台-产品开发-产品管理-编辑产品](#api_60)
 
-[59. 运营平台-消息推送-获取消息](#api_59)
+[61. 开发平台-产品开发-协议管理-查看协议](#api_61)
 
-[60. 运营平台-消息推送-保存配置](#api_60)
+[62. 开发平台-产品开发-协议管理-删除协议](#api_62)
 
-[61. 获取所有产品](#api_61)
+[63. 获取所有下发协议](#api_63)
 
-[62. 开发平台-产品开发-产品管理-删除产品](#api_62)
+[64. 开发平台-产品开发-协议管理-下载协议](#api_64)
 
-[63. 开发平台-产品开发-产品管理-获取产品](#api_63)
+[65. 开发平台-产品开发-协议管理-获取协议](#api_65)
 
-[64. 开发平台-产品开发-产品管理-创建产品](#api_64)
+[66. 开发平台-产品开发-协议管理-添加协议](#api_66)
 
-[65. 开发平台-产品开发-产品管理-编辑产品](#api_65)
+[67. 开发平台-产品开发-协议管理-编辑协议](#api_67)
 
-[66. 开发平台-产品开发-协议管理-查看协议](#api_66)
+[68. 获取所有上报协议](#api_68)
 
-[67. 开发平台-产品开发-协议管理-删除协议](#api_67)
+[69. 开发平台-数据转发-申请](#api_69)
 
-[68. 获取所有下发协议](#api_68)
+[70. 开发平台-数据转发-删除转发](#api_70)
 
-[69. 开发平台-产品开发-协议管理-下载协议](#api_69)
+[71. 开发平台-数据转发-获取转发](#api_71)
 
-[70. 开发平台-产品开发-协议管理-获取协议](#api_70)
+[72. 开发平台-数据转发-添加转发](#api_72)
 
-[71. 开发平台-产品开发-协议管理-添加协议](#api_71)
+[73. 开发平台-数据转发-编辑转发](#api_73)
 
-[72. 开发平台-产品开发-协议管理-编辑协议](#api_72)
+[74. 文件上传](#api_74)
 
-[73. 获取所有上报协议](#api_73)
+[75. 图片上传](#api_75)
 
-[74. 开发平台-数据转发-申请](#api_74)
+[76. 运营平台-用户管理-用户情况-导出](#api_76)
 
-[75. 开发平台-数据转发-删除转发](#api_75)
+[77. 运营平台-用户管理-用户情况-获取用户明细](#api_77)
 
-[76. 开发平台-数据转发-获取转发](#api_76)
+[78. 运营平台-用户管理-用户情况-概览](#api_78)
 
-[77. 开发平台-数据转发-添加转发](#api_77)
+[79. 运营平台-用户管理-用户情况-数据趋势](#api_79)
 
-[78. 开发平台-数据转发-编辑转发](#api_78)
+[80. 开发平台-智能互联-萤石摄像头-获取信息](#api_80)
 
-[79. 文件上传](#api_79)
+[81. 开发平台-智能互联-萤石摄像头-编辑信息](#api_81)
 
-[80. 图片上传](#api_80)
-
-[81. 运营平台-用户管理-用户情况-导出](#api_81)
-
-[82. 运营平台-用户管理-用户情况-获取用户明细](#api_82)
-
-[83. 运营平台-用户管理-用户情况-概览](#api_83)
-
-[84. 运营平台-用户管理-用户情况-数据趋势](#api_84)
-
-[85. 开发平台-智能互联-萤石摄像头-获取信息](#api_85)
-
-[86. 开发平台-智能互联-萤石摄像头-编辑信息](#api_86)
-
-### <a name='api_1'>1. 发送验证码</a>
-请求地址
-
-<pre>POST	account/get_vcode</pre>
-
-请求参数
-
-|字段|类型|描述|
-|--|--|--|
-|mobile|string|手机号|
-|type|int|类型，1：注册、2：忘记密码|
-
-返回参数
-
-|字段|类型|描述|
-|--|--|--|
-|errcode|int|返回码，返回0是成功，其余都是错误|
-|errmsg|string|错误信息，可以直接显示给用户|
-
-### <a name='api_2'>2. 登录</a>
-请求地址
-
-<pre>POST	account/login</pre>
-
-请求参数
-
-|字段|类型|描述|
-|--|--|--|
-|username|string|用户名，需要AES-256加密|
-|assword|string|密码，需要AES-256加密|
-
-返回参数
-
-|字段|类型|描述|
-|--|--|--|
-|errcode|int|返回码，返回0是成功，其余都是错误|
-|errmsg|string|错误信息，可以直接显示给用户|
-
-### <a name='api_3'>3. 登出</a>
-请求地址
-
-<pre>POST	account/logout</pre>
-
-请求参数
-
-|字段|类型|描述|
-|--|--|--|
-
-返回参数
-
-|字段|类型|描述|
-|--|--|--|
-|errcode|int|返回码，返回0是成功，其余都是错误|
-|errmsg|string|错误信息，可以直接显示给用户|
-
-### <a name='api_4'>4. 注册</a>
-请求地址
-
-<pre>POST	account/register</pre>
-
-请求参数
-
-|字段|类型|描述|
-|--|--|--|
-|username|string|用户名，需要AES-256加密|
-|assword|string|密码，需要AES-256加密|
-|repassword|string|确认密码，需要AES-256加密|
-|vcode|string|验证码|
-|fullname|string|姓名|
-|enterprise_name|string|公司名称|
-
-返回参数
-
-|字段|类型|描述|
-|--|--|--|
-|errcode|int|返回码，返回0是成功，其余都是错误|
-|errmsg|string|错误信息，可以直接显示给用户|
-
-### <a name='api_5'>5. 重置密码（忘记密码）</a>
-请求地址
-
-<pre>POST	account/reset_pwd</pre>
-
-请求参数
-
-|字段|类型|描述|
-|--|--|--|
-|username|string|用户名，需要AES-256加密|
-|assword|string|密码，需要AES-256加密|
-|repassword|string|确认密码，需要AES-256加密|
-|vcode|string|验证码|
-
-返回参数
-
-|字段|类型|描述|
-|--|--|--|
-|errcode|int|返回码，返回0是成功，其余都是错误|
-|errmsg|string|错误信息，可以直接显示给用户|
-
-### <a name='api_6'>6. 运营平台-用户管理-活跃用户-概览</a>
+### <a name='api_1'>1. 运营平台-用户管理-活跃用户-概览</a>
 请求地址
 
 <pre>POST	statistics/active_user/overview</pre>
@@ -291,8 +177,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_7'>7. 运营平台-用户管理-活跃用户-数据趋势</a>
+### <a name='api_2'>2. 运营平台-用户管理-活跃用户-数据趋势</a>
 请求地址
 
 <pre>POST	statistics/active_user/trends</pre>
@@ -310,8 +201,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_8'>8. 运营平台-告警管理-导出</a>
+### <a name='api_3'>3. 运营平台-告警管理-导出</a>
 请求地址
 
 <pre>POST	alarm/export</pre>
@@ -329,8 +225,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_9'>9. 运营平台-告警管理-获取告警明细</a>
+### <a name='api_4'>4. 运营平台-告警管理-获取告警明细</a>
 请求地址
 
 <pre>POST	alarm/lists</pre>
@@ -349,8 +250,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_10'>10. 运营平台-告警管理-概览</a>
+### <a name='api_5'>5. 运营平台-告警管理-概览</a>
 请求地址
 
 <pre>POST	statistics/alarm/overview</pre>
@@ -367,8 +273,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_11'>11. 运营平台-告警管理-数据趋势</a>
+### <a name='api_6'>6. 运营平台-告警管理-数据趋势</a>
 请求地址
 
 <pre>POST	statistics/alarm/trends</pre>
@@ -386,8 +297,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_12'>12. 开发平台-产品开发-告警设置-删除告警规则</a>
+### <a name='api_7'>7. 开发平台-产品开发-告警设置-删除告警规则</a>
 请求地址
 
 <pre>POST	alert/del</pre>
@@ -404,8 +320,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_13'>13. 开发平台-产品开发-告警设置-获取告警</a>
+### <a name='api_8'>8. 开发平台-产品开发-告警设置-获取告警</a>
 请求地址
 
 <pre>POST	alert/lists</pre>
@@ -423,8 +344,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_14'>14. 开发平台-产品开发-告警设置-添加告警规则</a>
+### <a name='api_9'>9. 开发平台-产品开发-告警设置-添加告警规则</a>
 请求地址
 
 <pre>POST	alert/save</pre>
@@ -451,8 +377,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_15'>15. 开发平台-产品开发-告警设置-编辑告警规则</a>
+### <a name='api_10'>10. 开发平台-产品开发-告警设置-编辑告警规则</a>
 请求地址
 
 <pre>POST	alert/save</pre>
@@ -480,8 +411,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_16'>16. 运营平台-APK升级-删除APK</a>
+### <a name='api_11'>11. 运营平台-APK升级-删除APK</a>
 请求地址
 
 <pre>POST	apk/del</pre>
@@ -499,8 +435,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_17'>17. 运营平台-APK升级-获取APK</a>
+### <a name='api_12'>12. 运营平台-APK升级-获取APK</a>
 请求地址
 
 <pre>POST	apk/lists</pre>
@@ -518,8 +459,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_18'>18. 运营平台-APK升级-创建APK</a>
+### <a name='api_13'>13. 运营平台-APK升级-创建APK</a>
 请求地址
 
 <pre>POST	apk/save</pre>
@@ -540,8 +486,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_19'>19. 获取所有应用</a>
+### <a name='api_14'>14. 获取所有应用</a>
 请求地址
 
 <pre>POST	app/all_lists</pre>
@@ -557,8 +508,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_20'>20. 开发平台-产品开发-应用管理-删除应用</a>
+### <a name='api_15'>15. 开发平台-产品开发-应用管理-删除应用</a>
 请求地址
 
 <pre>POST	app/del</pre>
@@ -575,8 +531,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_21'>21. 开发平台-产品开发-应用管理-获取应用</a>
+### <a name='api_16'>16. 开发平台-产品开发-应用管理-获取应用</a>
 请求地址
 
 <pre>POST	app/lists</pre>
@@ -595,8 +556,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_22'>22. 开发平台-产品开发-应用管理-创建应用</a>
+### <a name='api_17'>17. 开发平台-产品开发-应用管理-创建应用</a>
 请求地址
 
 <pre>POST	app/save</pre>
@@ -618,8 +584,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_23'>23. 开发平台-产品开发-应用管理-编辑应用</a>
+### <a name='api_18'>18. 开发平台-产品开发-应用管理-编辑应用</a>
 请求地址
 
 <pre>POST	app/save</pre>
@@ -642,8 +613,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_24'>24. 开发平台-产品开发-设备调试-删除设备</a>
+### <a name='api_19'>19. 开发平台-产品开发-设备调试-删除设备</a>
 请求地址
 
 <pre>POST	debug/del</pre>
@@ -662,8 +638,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_25'>25. 开发平台-产品开发-设备调试-获取设备</a>
+### <a name='api_20'>20. 开发平台-产品开发-设备调试-获取设备</a>
 请求地址
 
 <pre>POST	debug/lists</pre>
@@ -681,8 +662,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_26'>26. 开发平台-产品开发-设备调试-添加设备</a>
+### <a name='api_21'>21. 开发平台-产品开发-设备调试-添加设备</a>
 请求地址
 
 <pre>POST	debug/save</pre>
@@ -702,8 +688,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_27'>27. 开发平台-产品开发-设备调试-发送指令给设备</a>
+### <a name='api_22'>22. 开发平台-产品开发-设备调试-发送指令给设备</a>
 请求地址
 
 <pre>POST	debug/send</pre>
@@ -722,8 +713,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_28'>28. 运营平台-设备管理-设备授权-获取授权明细</a>
+### <a name='api_23'>23. 运营平台-设备管理-设备授权-获取授权明细</a>
 请求地址
 
 <pre>POST	device/auth_lists</pre>
@@ -741,8 +737,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_29'>29. 运营平台-设备管理-设备授权-概览</a>
+### <a name='api_24'>24. 运营平台-设备管理-设备授权-概览</a>
 请求地址
 
 <pre>POST	device/auth_overview</pre>
@@ -759,8 +760,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_30'>30. 运营平台-设备管理-设备情况-导出</a>
+### <a name='api_25'>25. 运营平台-设备管理-设备情况-导出</a>
 请求地址
 
 <pre>POST	device/export</pre>
@@ -778,8 +784,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_31'>31. 运营平台-设备管理-设备授权-导入</a>
+### <a name='api_26'>26. 运营平台-设备管理-设备授权-导入</a>
 请求地址
 
 <pre>POST	device/import</pre>
@@ -797,8 +808,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_32'>32. 运营平台-设备管理-设备情况-获取设备明细</a>
+### <a name='api_27'>27. 运营平台-设备管理-设备情况-获取设备明细</a>
 请求地址
 
 <pre>POST	device/lists</pre>
@@ -819,8 +835,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_33'>33. 运营平台-设备管理-设备情况-概览</a>
+### <a name='api_28'>28. 运营平台-设备管理-设备情况-概览</a>
 请求地址
 
 <pre>POST	statistics/device/overview</pre>
@@ -837,8 +858,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_34'>34. 运营平台-设备管理-设备情况-数据趋势</a>
+### <a name='api_29'>29. 运营平台-设备管理-设备情况-数据趋势</a>
 请求地址
 
 <pre>POST	statistics/device/trends</pre>
@@ -856,8 +882,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_35'>35. 运营平台-首页-设备分布</a>
+### <a name='api_30'>30. 运营平台-首页-设备分布</a>
 请求地址
 
 <pre>POST	statistics/enterprise/device_distributed</pre>
@@ -873,8 +904,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_36'>36. 运营平台-首页-设备趋势</a>
+### <a name='api_31'>31. 运营平台-首页-设备趋势</a>
 请求地址
 
 <pre>POST	statistics/enterprise/device_trends</pre>
@@ -891,8 +927,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_37'>37. 获取企业信息</a>
+### <a name='api_32'>32. 获取企业信息</a>
 请求地址
 
 <pre>POST	enterprise/info</pre>
@@ -908,8 +949,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_38'>38. 运营平台-首页-概览</a>
+### <a name='api_33'>33. 运营平台-首页-概览</a>
 请求地址
 
 <pre>POST	statistics/enterprise/overview</pre>
@@ -925,8 +971,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_39'>39. 编辑企业信息</a>
+### <a name='api_34'>34. 编辑企业信息</a>
 请求地址
 
 <pre>POST	enterprise/save</pre>
@@ -946,8 +997,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_40'>40. 运营平台-首页-用户分布</a>
+### <a name='api_35'>35. 运营平台-首页-用户分布</a>
 请求地址
 
 <pre>POST	statistics/enterprise/user_distributed</pre>
@@ -963,8 +1019,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_41'>41. 运营平台-首页-用户机型分布</a>
+### <a name='api_36'>36. 运营平台-首页-用户机型分布</a>
 请求地址
 
 <pre>POST	statistics/enterprise/user_model_distributed</pre>
@@ -980,8 +1041,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_42'>42. 运营平台-首页-用户趋势</a>
+### <a name='api_37'>37. 运营平台-首页-用户趋势</a>
 请求地址
 
 <pre>POST	statistics/enterprise/user_trends</pre>
@@ -998,8 +1064,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_43'>43. 运营平台-常见问题管理-删除常见问题</a>
+### <a name='api_38'>38. 运营平台-常见问题管理-删除常见问题</a>
 请求地址
 
 <pre>POST	faq/del</pre>
@@ -1017,8 +1088,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_44'>44. 运营平台-常见问题管理-获取常见问题</a>
+### <a name='api_39'>39. 运营平台-常见问题管理-获取常见问题</a>
 请求地址
 
 <pre>POST	faq/lists</pre>
@@ -1036,8 +1112,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_45'>45. 运营平台-常见问题管理-新增常见问题</a>
+### <a name='api_40'>40. 运营平台-常见问题管理-新增常见问题</a>
 请求地址
 
 <pre>POST	faq/save</pre>
@@ -1057,8 +1138,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_46'>46. 运营平台-常见问题管理-编辑常见问题</a>
+### <a name='api_41'>41. 运营平台-常见问题管理-编辑常见问题</a>
 请求地址
 
 <pre>POST	faq/save</pre>
@@ -1079,8 +1165,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_47'>47. 运营平台-用户反馈-删除</a>
+### <a name='api_42'>42. 运营平台-用户反馈-删除</a>
 请求地址
 
 <pre>POST	feedback/del</pre>
@@ -1098,8 +1189,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_48'>48. 运营平台-用户反馈-获取反馈列表</a>
+### <a name='api_43'>43. 运营平台-用户反馈-获取反馈列表</a>
 请求地址
 
 <pre>POST	feedback/lists</pre>
@@ -1118,8 +1214,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_49'>49. 运营平台-用户反馈-修改状态</a>
+### <a name='api_44'>44. 运营平台-用户反馈-修改状态</a>
 请求地址
 
 <pre>POST	feedback/status</pre>
@@ -1138,8 +1239,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_50'>50. 运营平台-固件升级-删除固件</a>
+### <a name='api_45'>45. 运营平台-固件升级-删除固件</a>
 请求地址
 
 <pre>POST	firmware/del</pre>
@@ -1157,8 +1263,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_51'>51. 运营平台-固件升级-获取固件</a>
+### <a name='api_46'>46. 运营平台-固件升级-获取固件</a>
 请求地址
 
 <pre>POST	firmware/lists</pre>
@@ -1176,8 +1287,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_52'>52. 运营平台-固件升级-创建固件</a>
+### <a name='api_47'>47. 运营平台-固件升级-创建固件</a>
 请求地址
 
 <pre>POST	firmware/save</pre>
@@ -1197,8 +1313,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_53'>53. 运营平台-邮件模板-获取模板</a>
+### <a name='api_48'>48. 运营平台-邮件模板-获取模板</a>
 请求地址
 
 <pre>POST	mail_template/info</pre>
@@ -1215,8 +1336,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_54'>54. 运营平台-邮件模板-保存模板</a>
+### <a name='api_49'>49. 运营平台-邮件模板-保存模板</a>
 请求地址
 
 <pre>POST	mail_template/save</pre>
@@ -1236,8 +1362,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_55'>55. 获取个人信息</a>
+### <a name='api_50'>50. 获取个人信息</a>
 请求地址
 
 <pre>POST	member/info</pre>
@@ -1253,8 +1384,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_56'>56. 编辑个人信息</a>
+### <a name='api_51'>51. 编辑个人信息</a>
 请求地址
 
 <pre>POST	member/save</pre>
@@ -1275,8 +1411,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_57'>57. 运营平台-消息推送-新增消息</a>
+### <a name='api_52'>52. 运营平台-消息推送-新增消息</a>
 请求地址
 
 <pre>POST	msg/add</pre>
@@ -1299,8 +1440,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_58'>58. 运营平台-消息推送-获取配置</a>
+### <a name='api_53'>53. 运营平台-消息推送-获取配置</a>
 请求地址
 
 <pre>POST	msg/info</pre>
@@ -1317,8 +1463,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_59'>59. 运营平台-消息推送-获取消息</a>
+### <a name='api_54'>54. 运营平台-消息推送-获取消息</a>
 请求地址
 
 <pre>POST	msg/lists</pre>
@@ -1336,8 +1487,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_60'>60. 运营平台-消息推送-保存配置</a>
+### <a name='api_55'>55. 运营平台-消息推送-保存配置</a>
 请求地址
 
 <pre>POST	msg/save_info</pre>
@@ -1357,8 +1513,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_61'>61. 获取所有产品</a>
+### <a name='api_56'>56. 获取所有产品</a>
 请求地址
 
 <pre>POST	roduct/all_lists</pre>
@@ -1375,8 +1536,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_62'>62. 开发平台-产品开发-产品管理-删除产品</a>
+### <a name='api_57'>57. 开发平台-产品开发-产品管理-删除产品</a>
 请求地址
 
 <pre>POST	roduct/del</pre>
@@ -1393,8 +1559,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_63'>63. 开发平台-产品开发-产品管理-获取产品</a>
+### <a name='api_58'>58. 开发平台-产品开发-产品管理-获取产品</a>
 请求地址
 
 <pre>POST	roduct/lists</pre>
@@ -1412,8 +1583,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_64'>64. 开发平台-产品开发-产品管理-创建产品</a>
+### <a name='api_59'>59. 开发平台-产品开发-产品管理-创建产品</a>
 请求地址
 
 <pre>POST	roduct/save</pre>
@@ -1435,8 +1611,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_65'>65. 开发平台-产品开发-产品管理-编辑产品</a>
+### <a name='api_60'>60. 开发平台-产品开发-产品管理-编辑产品</a>
 请求地址
 
 <pre>POST	roduct/save</pre>
@@ -1459,8 +1640,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_66'>66. 开发平台-产品开发-协议管理-查看协议</a>
+### <a name='api_61'>61. 开发平台-产品开发-协议管理-查看协议</a>
 请求地址
 
 <pre>POST	rotocol/all_lists</pre>
@@ -1477,8 +1663,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_67'>67. 开发平台-产品开发-协议管理-删除协议</a>
+### <a name='api_62'>62. 开发平台-产品开发-协议管理-删除协议</a>
 请求地址
 
 <pre>POST	rotocol/del</pre>
@@ -1495,8 +1686,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_68'>68. 获取所有下发协议</a>
+### <a name='api_63'>63. 获取所有下发协议</a>
 请求地址
 
 <pre>POST	rotocol/downlists</pre>
@@ -1512,8 +1708,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_69'>69. 开发平台-产品开发-协议管理-下载协议</a>
+### <a name='api_64'>64. 开发平台-产品开发-协议管理-下载协议</a>
 请求地址
 
 <pre>POST	rotocol/download</pre>
@@ -1531,8 +1732,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_70'>70. 开发平台-产品开发-协议管理-获取协议</a>
+### <a name='api_65'>65. 开发平台-产品开发-协议管理-获取协议</a>
 请求地址
 
 <pre>POST	rotocol/lists</pre>
@@ -1550,8 +1756,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_71'>71. 开发平台-产品开发-协议管理-添加协议</a>
+### <a name='api_66'>66. 开发平台-产品开发-协议管理-添加协议</a>
 请求地址
 
 <pre>POST	rotocol/save</pre>
@@ -1580,8 +1791,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_72'>72. 开发平台-产品开发-协议管理-编辑协议</a>
+### <a name='api_67'>67. 开发平台-产品开发-协议管理-编辑协议</a>
 请求地址
 
 <pre>POST	rotocol/save</pre>
@@ -1611,8 +1827,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_73'>73. 获取所有上报协议</a>
+### <a name='api_68'>68. 获取所有上报协议</a>
 请求地址
 
 <pre>POST	rotocol/uplists</pre>
@@ -1628,8 +1849,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_74'>74. 开发平台-数据转发-申请</a>
+### <a name='api_69'>69. 开发平台-数据转发-申请</a>
 请求地址
 
 <pre>POST	transfer/apply</pre>
@@ -1645,8 +1871,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_75'>75. 开发平台-数据转发-删除转发</a>
+### <a name='api_70'>70. 开发平台-数据转发-删除转发</a>
 请求地址
 
 <pre>POST	transfer/del</pre>
@@ -1663,8 +1894,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_76'>76. 开发平台-数据转发-获取转发</a>
+### <a name='api_71'>71. 开发平台-数据转发-获取转发</a>
 请求地址
 
 <pre>POST	transfer/lists</pre>
@@ -1682,8 +1918,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_77'>77. 开发平台-数据转发-添加转发</a>
+### <a name='api_72'>72. 开发平台-数据转发-添加转发</a>
 请求地址
 
 <pre>POST	transfer/save</pre>
@@ -1703,8 +1944,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_78'>78. 开发平台-数据转发-编辑转发</a>
+### <a name='api_73'>73. 开发平台-数据转发-编辑转发</a>
 请求地址
 
 <pre>POST	transfer/save</pre>
@@ -1725,8 +1971,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_79'>79. 文件上传</a>
+### <a name='api_74'>74. 文件上传</a>
 请求地址
 
 <pre>POST	upload/upload_file</pre>
@@ -1743,8 +1994,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_80'>80. 图片上传</a>
+### <a name='api_75'>75. 图片上传</a>
 请求地址
 
 <pre>POST	upload/upload_img</pre>
@@ -1761,8 +2017,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_81'>81. 运营平台-用户管理-用户情况-导出</a>
+### <a name='api_76'>76. 运营平台-用户管理-用户情况-导出</a>
 请求地址
 
 <pre>POST	user/export</pre>
@@ -1780,8 +2041,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_82'>82. 运营平台-用户管理-用户情况-获取用户明细</a>
+### <a name='api_77'>77. 运营平台-用户管理-用户情况-获取用户明细</a>
 请求地址
 
 <pre>POST	user/lists</pre>
@@ -1800,8 +2066,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_83'>83. 运营平台-用户管理-用户情况-概览</a>
+### <a name='api_78'>78. 运营平台-用户管理-用户情况-概览</a>
 请求地址
 
 <pre>POST	statistics/user/overview</pre>
@@ -1818,8 +2089,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_84'>84. 运营平台-用户管理-用户情况-数据趋势</a>
+### <a name='api_79'>79. 运营平台-用户管理-用户情况-数据趋势</a>
 请求地址
 
 <pre>POST	statistics/user/trends</pre>
@@ -1837,8 +2113,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_85'>85. 开发平台-智能互联-萤石摄像头-获取信息</a>
+### <a name='api_80'>80. 开发平台-智能互联-萤石摄像头-获取信息</a>
 请求地址
 
 <pre>POST	yingshi/info</pre>
@@ -1854,8 +2135,13 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
-### <a name='api_86'>86. 开发平台-智能互联-萤石摄像头-编辑信息</a>
+### <a name='api_81'>81. 开发平台-智能互联-萤石摄像头-编辑信息</a>
 请求地址
 
 <pre>POST	yingshi/save</pre>
@@ -1873,5 +2159,9 @@
 |--|--|--|
 |errcode|int|返回码，返回0是成功，其余都是错误|
 |errmsg|string|错误信息，可以直接显示给用户|
-
+|data|object|数据|
+|data.total|string|用户总数|
+|data.active|string|昨日活跃|
+|data.active7|string|7日活跃|
+|data.active30|string|30日活跃|
 
