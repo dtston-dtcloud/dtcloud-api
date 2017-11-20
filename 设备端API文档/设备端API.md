@@ -7,7 +7,7 @@
 	
 ## 接口列表	
 
-[1. 设备激活](#device_activation)
+[1. 设备激活](#2-设备认证)
 
 [2. 设备认证](#device_verify)
 
